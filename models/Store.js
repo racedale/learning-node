@@ -8,7 +8,7 @@ const storeSchema = new mongoose.Schema({
     trim: true,
     required: 'Please enter a store name!'
   },
-  slugs: String,
+  slug: String,
   description: {
     type: String,
     trim: true
@@ -24,8 +24,8 @@ const storeSchema = new mongoose.Schema({
       default: 'Point'
     },
     coordinates: [{
-        type: Number,
-        required: 'You must supply coordinates!'
+      type: Number,
+      required: 'You must supply coordinates!'
     }],
     address: {
       type: String,

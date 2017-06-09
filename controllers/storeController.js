@@ -55,6 +55,15 @@ exports.getStores = async (req, res) => {
   res.render('stores', { title: 'Stores', stores })
 }
 
+exports.getStoreBySlug = async (req, res) => {
+  const store = await Store.findOne({ slug: req.params.slug });
+  if(!store) {
+    return next();
+  } else {
+    res.render('store', { title: store.name, store })
+  }
+}
+
 exports.editStore = async (req, res) => {
   // 1. Find store given the id
   // 2. confirm they are the owner of the store
