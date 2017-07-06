@@ -28,6 +28,8 @@ router.get('/tags', catchErrors(storeController.getStoresbyTag));
 router.get('/tags/:tag', catchErrors(storeController.getStoresbyTag));
 
 router.get('/login', userController.loginForm);
+router.post('/login', authController.login);
+
 router.get('/register', userController.registerForm);
 
 router.post('/register', 
